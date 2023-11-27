@@ -49,7 +49,7 @@ def request_one_day(url, jsons=[]):
 def main():
     print(sys.path)
 
-    date = "2023-10-04"
+    date = "2023-10-17"
 
     url_specific = f"{url}?scheduleDate={date}"
 
@@ -58,7 +58,7 @@ def main():
     data = [file["flights"] for file in jsons]
     flat_data = [item for sublist in data for item in sublist]
 
-    folder_path = "schipholler/flight_data"
+    folder_path = "schiphol_api_connections/flight_data"
     file_name = f"{date}.json"
     csv_file_name = f"{date}.csv"
 

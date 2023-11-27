@@ -1,10 +1,9 @@
-import requests
-import re
 import json
 import os
+import re
 
-# import csv
-
+import pandas as pd
+import requests
 
 APP_KEY = "9c4c29278420898f1a69c056f663cdec"
 APP_ID = "d68e0bbe"
@@ -77,5 +76,22 @@ def main():
         json.dump(data_processed, f, ensure_ascii=False, indent=4)
 
 
+def change_destinations_to_csv():
+    folder_path = "schiphol_api_connections/destinations_data"
+    file_name = "destinations_with_coords.json"
+    csv_file_name = "destinations_with_coords.csv"
+
+    file_path = os.path.join(folder_path, file_name)
+    csv_file_path = os.path.join(folder_path, csv_file_name)
+
+    with open(file_path, "r") as f:
+        data = pd.read_json(f)
+
+    keys = data[0].keys()
+    print(keys)
+
+    data.to_csv(csv_file_path)
+
+
 if __name__ == "__main__":
-    main()
+    change_destinations_to_csv()
