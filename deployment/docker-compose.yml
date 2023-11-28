@@ -4,17 +4,17 @@ volumes:
   spark-data:
     driver_opts:
       type: none
-      device: /home/${USER_HOME}/DataEngineering/AssignmentDos/schiphol_api_connections
+      device: /home/${USER_HOME}/data
       o: bind
   notebooks:
     driver_opts:
       type: none
-      device: /home/${USER_HOME}/DataEngineering/AssignmentDos/pipelines
+      device: /home/${USER_HOME}/notebooks
       o: bind
   spark-checkpoint:
     driver_opts:
       type: none
-      device: /home/${USER_HOME}/DataEngineering/AssignmentDos/checkpoints
+      device: /home/${USER_HOME}/checkpoint
       o: bind
 services:
   spark-driver-app:
