@@ -31,7 +31,6 @@ services:
       - notebooks:/home/jovyan/notebooks  # jovyan is the default user of the image all-spark-notebook:spark-3.1.2. Do not change this
       - spark-data:/home/jovyan/data
       - spark-checkpoint:/home/jovyan/checkpoint
-      - /home/jads/.config/gcloud/application_default_credentials.json:/home/jovyan/.config/gcloud/application_default_credentials.json
   spark-master:
     build:
       context: ./spark-bitnami-python3.11

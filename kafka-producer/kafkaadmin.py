@@ -2,7 +2,7 @@ from kafka.admin import KafkaAdminClient, NewTopic
 
 
 def delete_topics(admin):
-    admin.delete_topics(topics=["flights"])
+    admin.delete_topics(topics=["flights_results"])
 
 
 def create_topics(admin, topic_list):
@@ -11,7 +11,7 @@ def create_topics(admin, topic_list):
 
 if __name__ == "__main__":
     admin_client = KafkaAdminClient(
-        bootstrap_servers="127.0.0.1:9092",
+        bootstrap_servers="34.133.117.196:9092",
         client_id="streamer",
     )  # use your VM's external IP Here!
     topic_list = [
