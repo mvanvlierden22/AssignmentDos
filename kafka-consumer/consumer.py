@@ -26,7 +26,7 @@ def read_from_topic_with_partition_offset(kafka_consumer, topic):
 
 if __name__ == "__main__":
     consumer = KafkaConsumer(
-        bootstrap_servers="34.133.117.196:9092",  # use your VM's external IP Here!
+        bootstrap_servers="127.0.0.1:9092",  # use your VM's external IP Here!
         auto_offset_reset="latest",
         consumer_timeout_ms=10000,
     )

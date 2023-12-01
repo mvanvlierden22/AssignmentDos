@@ -27,7 +27,7 @@ def kafka_python_producer_async(producer, msg, topic):
 
 if __name__ == "__main__":
     producer = KafkaProducer(
-        bootstrap_servers="34.133.117.196:9092"
+        bootstrap_servers="127.0.0.1:9092"
     )  # use your VM's external IP Here!
     with open(
         "/home/jads/DataEngineering/AssignmentDos/schiphol_api_connections/flight_data/2023-10-01.json"
