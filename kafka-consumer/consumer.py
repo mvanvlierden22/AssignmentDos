@@ -10,9 +10,9 @@ def read_from_topic(kafka_consumer, topic):
 
 
 def read_from_topic_with_partition(kafka_consumer, topic):
-    kafka_consumer.assign([TopicPartition(topic, 1)])
+    kafka_consumer.assign([TopicPartition(topic, 0)])
     for msg in kafka_consumer:
-        print(msg)
+        print(msg.value)
 
 
 def read_from_topic_with_partition_offset(kafka_consumer, topic):
@@ -26,9 +26,9 @@ def read_from_topic_with_partition_offset(kafka_consumer, topic):
 
 if __name__ == "__main__":
     consumer = KafkaConsumer(
-        bootstrap_servers="127.0.0.1:9092",  # use your VM's external IP Here!
+        bootstrap_servers="34.172.3.9:9092",  # use your VM's external IP Here!
         auto_offset_reset="latest",
         consumer_timeout_ms=10000,
     )
     print(consumer.topics())
-    read_from_topic(consumer, "flights_results")
+    read_from_topic(consumer, "results")
